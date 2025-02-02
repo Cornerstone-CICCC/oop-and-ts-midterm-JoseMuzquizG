@@ -9,7 +9,10 @@ export class App extends Component {
     appContainer.className = 'container'
     appContainer.innerHTML = `
       <header></header>
-      <main></main>
+      <main>
+        <section class= "shop"></section>
+        <section class= "cart"></section>
+      </main>
       <footer></footer>
     `
     const header = new Header({
@@ -22,7 +25,7 @@ export class App extends Component {
 
     appContainer.querySelector('header').appendChild(header)
     appContainer.querySelector('footer').appendChild(footer)
-    mainContent.mount(appContainer.querySelector("main"))
+    mainContent.mount(appContainer.querySelector(".shop"))
 
     return appContainer
   }

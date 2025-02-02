@@ -30,17 +30,3 @@ export class ProductList extends Component {
     return productList
   }
 }
-
-  //llamdo de la api
-  //crear una nueva instancia por cada producto de api la instancia es la de product item
-  //product item al hacer el render vas a tener un return y el resultado lo vas a agregar a lista
-  //for(item =>{
-    // const newItem = new ProductItem(item)
-    // this.list.apend(newItem)
-    //})
-
-    // const listItems = document.createElement("div")
-    // listItems.innerHTML = `
-    // <ul class="list"></ul>
-    // `
-    // this.list = listItems.querySelector(".list")

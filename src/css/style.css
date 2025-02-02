@@ -1,5 +1,5 @@
 * {box-sizing: border-box;}
-body {margin: 0; padding: 0;}
+body {margin: 0; padding: 0; font-family: "Manrope";}
 
 .header-container {
     display: flex;
@@ -8,7 +8,6 @@ body {margin: 0; padding: 0;}
     align-items: center;
     padding: 2rem .5rem;
     border-bottom: solid black 1px;
-    margin-bottom: 1.5rem;
 }
 
 .logo {
@@ -35,8 +34,106 @@ small {
     width: 100px;
 }
 
+main {
+    background-color: rgb(250, 250, 250);
+}
+
+.list {
+    max-width: 1800px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: .5rem .5rem .5rem rgba(0, 0, 0, 0.05);
+    width: 200px;
+    height: 330px;
+
+    h3 {margin: .5rem 0; font-size: 1rem;}
+    p {margin: 0; font-size: 12px}
+}
+
+.product-item-upper {
+    height: 50%;
+    overflow: hidden;
+}
+
+.product-item-upper img {
+    width: 100%;
+}
+
+.product-item-lower {
+    height: 50%;
+    width: 100%;
+    background-color: white;
+    padding: .5rem 0;
+}
+
+.product-item-title h3{
+    width: 100%;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+
+.product-item-lower button {
+    display: flex;
+    justify-self: center;
+    padding: .5rem;
+    background-color: rgb(206, 241, 206);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: .1s ease-in-out;
+}
+
+.product-item-lower button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.product-item-lower button:active {
+    background-color: white;
+}
+
 footer {
     display: flex;
     justify-content: center;
     text-align: center;
+    background-color: rgb(120, 9, 9);
+    color: white;
+}
+
+.open-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 10px rgb(0, 156, 0);
+    position: fixed;
+    bottom: 2rem;
+    color: #ff0000;
+    right: 2rem;
+    transition: .2s ease-in-out;
+    background-color: rgb(0, 156, 0);
+}
+
+.open-cart:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
