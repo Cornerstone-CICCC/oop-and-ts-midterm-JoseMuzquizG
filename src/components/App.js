@@ -1,7 +1,9 @@
-import { Component } from "../common/Component.js";
+import { Component } from "../common/Component.js"
 import { Header } from "./Header.js"
-import { Footer } from "./Footer.js";
-import { ProductList } from "./ProductList.js";
+import { Footer } from "./Footer.js"
+import { ProductList } from "./ProductList.js"
+import { CartList } from "./CartList.js"
+
 
 export class App extends Component {
   render() {
@@ -20,12 +22,14 @@ export class App extends Component {
       siteTitle: "Shop That Understands Me",
       desc: "The shop that really knows what I want"
     }).render()
-    const mainContent = new ProductList({cartContext: this.props.cartContext})
+    const shopContent = new ProductList({cartContext: this.props.cartContext})
+    const cartList = new CartList({ cartContext: this.props.cartContext })
     const footer = new Footer({cartContext: this.props.cartContext}).render()
 
     appContainer.querySelector('header').appendChild(header)
     appContainer.querySelector('footer').appendChild(footer)
-    mainContent.mount(appContainer.querySelector(".shop"))
+    shopContent.mount(appContainer.querySelector(".shop"))
+    cartList.mount(appContainer.querySelector(".cart"))
 
     return appContainer
   }

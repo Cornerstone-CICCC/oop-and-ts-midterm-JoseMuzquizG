@@ -11,7 +11,7 @@ export class CartContext {
     addProduct(product) {
         const found = this.cart.find(item => item.id === product.id)
         if (found) {
-            this.updateQuantity(product.id)
+            this.updateQuantity(product.id, found.quantity +1)
         } else {
             this.cart.push({
                 ...product,
@@ -21,12 +21,15 @@ export class CartContext {
         this.notifyListeners()
     }
 
-    updateQuantity(id) {
+    updateQuantity(id, newQuantity) {
+        if (newQuantity <= 0) {
+            this.removeProduct(id)
+        }
         this.cart = this.cart.map(product => {
             if (product.id === id) {
                 return {
                     ...product,
-                    quantity: product.quantity + 1
+                    quantity: newQuantity
                 }
             } else {
                 return product
@@ -42,7 +45,6 @@ export class CartContext {
 
     subscribe(listener) {
         this.listeners.push(listener)
-        console.log(this.listeners)
     }
 
     notifyListeners() {

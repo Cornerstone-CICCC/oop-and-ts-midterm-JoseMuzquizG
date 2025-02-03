@@ -1,4 +1,4 @@
-import { Component } from "../common/Component.js";
+import { Component } from "../common/Component.js"
 
 export class ProductItem extends Component {
   constructor(props) {
@@ -25,11 +25,14 @@ export class ProductItem extends Component {
         <p>⭐${this.props.product.rating.rate}/5 (${this.props.product.rating.count} reviews)</p>
       </div>
       <div class="product-item-price">
-        <h3>$${this.props.product.price}</h3>
+        <h3>$${parseFloat(this.props.product.price).toFixed(2)}</h3>
       </div>
-      <button class="add-to-cart">Buy Item</button>
+      <button class="add-to-cart">Add to cart</button>
     </div>
     `
+
+    product.querySelector('.add-to-cart').addEventListener('click', this.handleAddToCart.bind(this))
+
     return product
   }
 }
